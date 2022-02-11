@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\AccueilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/', function () {
+    //return view('pages/accueil');
+    //return 'bienvenue';
+});*/
+
+Route::get('/', [AccueilController::class,'homePage']);
+
+Route::get('/catalogue', [ProduitController::class,'catalogue']);

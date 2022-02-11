@@ -1,0 +1,42 @@
+body{
+    background: url('../img/mont_aiguille.jpg');
+    //background: url('../img/foret.jpg')no-repeat;
+    background-size: 110%;
+}
+
+#titre{
+margin-left:2%;
+    font-family: "Berlin Sans FB";
+
+}
+
+#presentation{
+    height:30%;
+    width:30%;
+    margin-left:10%;
+    margin-top:20%;
+    color:white;
+}
+
+#logo{
+    height:100%;
+    width:35%;
+}
+
+#navbarNav {
+    background-color: #724b15;
+}
+
+.lienNavbarre{
+    color:white;
+}
+.lienNavbarre:hover{
+    color:black;
+}
+
+.navbar{
+
+    background-color: #724b15;
+}
+
+
