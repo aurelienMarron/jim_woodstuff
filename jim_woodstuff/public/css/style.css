@@ -35,8 +35,25 @@ margin-left:2%;
 }
 
 .navbar{
-
     background-color: #724b15;
+}
+
+#catalogue{
+    border:solid black 2px;
+    background-color: white;
+    margin:1%;
+}
+
+#nomproduit{
+margin:5%;
+}
+
+#descriptionproduit{
+    background-color: white;
+}
+
+#infosProduit{
+    font-size:150%;
 }
 
 

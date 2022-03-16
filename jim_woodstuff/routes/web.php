@@ -15,11 +15,11 @@ use App\Http\Controllers\AccueilController;
 |
 */
 
-/*Route::get('/', function () {
-    //return view('pages/accueil');
-    //return 'bienvenue';
-});*/
 
 Route::get('/', [AccueilController::class,'homePage']);
 
 Route::get('/catalogue', [ProduitController::class,'catalogue']);
+
+Route::get('/detailProduit/{id}', [ProduitController::class,'detailProduit']);
+
+
