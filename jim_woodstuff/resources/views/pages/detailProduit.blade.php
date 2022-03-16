@@ -10,7 +10,7 @@
         <div class="row">
         <div class="col-md-7 " id="imageDetailProduit">
         @if($detailProduit->image!=NULL)
-            <img src="/img/{{$detailProduit->image}}" alt=""height="400">
+            <img src="/img/{{$detailProduit->image}}" alt="" height="400">
             @else
                 <img src="/img/rupture.png" alt="" height="400">
         @endif
