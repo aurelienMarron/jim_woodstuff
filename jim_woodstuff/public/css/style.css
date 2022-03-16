@@ -50,10 +50,16 @@ margin:5%;
 
 #descriptionproduit{
     background-color: white;
+    margin-top:2%;
 }
 
 #infosProduit{
     font-size:150%;
+    margin-left:-20%;
+}
+
+#imageDetailProduit{
+    margin-right: -5%;
 }
 
 
