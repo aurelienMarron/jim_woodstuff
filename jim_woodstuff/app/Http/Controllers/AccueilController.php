@@ -9,4 +9,8 @@ class AccueilController extends Controller
     {
         return view('pages/accueil');
     }
+
+    public function backoffice(){
+        return view('backoffice/backofficeAccueil');
+    }
 }

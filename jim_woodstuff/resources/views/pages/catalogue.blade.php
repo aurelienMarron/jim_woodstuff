@@ -28,7 +28,9 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$produit->nom}}</h5>
                             <p>Prix: {{$produit->prix}} euros</p>
+                            <a href="/detailProduit/{{$produit->id}}">
                             <img src="/img/rupture.png" alt="" height="100">
+                            </a>
                         </div>
                     </div>
                 @endif

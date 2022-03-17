@@ -22,4 +22,6 @@ Route::get('/catalogue', [ProduitController::class,'catalogue']);
 
 Route::get('/detailProduit/{id}', [ProduitController::class,'detailProduit']);
 
+Route::get('/backoffice',[AccueilController::class,'backoffice']);
+
 

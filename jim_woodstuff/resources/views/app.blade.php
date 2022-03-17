@@ -33,6 +33,9 @@
             <div class="col">
                 <a class="nav-link lienNavbarre" href="#">Contact</a>
             </div>
+            <div class="col">
+                <a class="nav-link lienNavbarre" href="/backoffice"><i class="bi bi-box-arrow-in-right"></i></a>
+            </div>
         </div>
 </div>
 </nav>
