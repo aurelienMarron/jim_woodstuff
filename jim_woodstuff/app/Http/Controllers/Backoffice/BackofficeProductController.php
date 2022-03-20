@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backoffice;
 
 use Illuminate\Http\Request;
+use App\Models\Produit;
+use App\Http\Controllers\Controller;
 
 class BackofficeProductController extends Controller
 {
@@ -13,7 +15,8 @@ class BackofficeProductController extends Controller
      */
     public function index()
     {
-        //
+        $produits=Produit::all();
+        return view('backoffice/backofficeProduits',['produits'=>$produits]);
     }
 
     /**
@@ -23,7 +26,7 @@ class BackofficeProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice/nouveauProduit');
     }
 
     /**
@@ -34,7 +37,21 @@ class BackofficeProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom'=>'required|unique:produits',
+            'prix'=>'numeric|min:0',
+            'dispo'=>'min:1|max:2|integer'
+        ]);
+
+        $produit = Produit::create(
+            ['nom' => $request->input('nom'),
+                'prix' => $request->input('prix'),
+                'description' => $request->input('description'),
+                'image' => $request->input('image'),
+                'dispo' => $request->input('dispo'),
+            ]);
+
+        return redirect()->route('backofficeProduits.show', [$produit]);
     }
 
     /**
@@ -45,7 +62,8 @@ class BackofficeProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $produit=Produit::find($id);
+        return view('backoffice/detailProduit',['produit'=>$produit]);
     }
 
     /**
@@ -56,7 +74,8 @@ class BackofficeProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produit=Produit::find($id);
+        return view('backoffice/modifProduit',['produit'=>$produit]);
     }
 
     /**
@@ -68,7 +87,12 @@ class BackofficeProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produit=Produit::find($id);
+        $input=$request->all();
+        $produit->fill($input)->save();
+
+
+        return redirect()->route('backofficeProduits.show',[$produit]);
     }
 
     /**

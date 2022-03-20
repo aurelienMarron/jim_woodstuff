@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\Backoffice\BackofficeProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,4 @@ Route::get('/detailProduit/{id}', [ProduitController::class,'detailProduit']);
 
 Route::get('/backoffice',[AccueilController::class,'backoffice']);
 
-
+Route::resource('/backofficeProduits',BackofficeProductController::class);
