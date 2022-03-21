@@ -20,6 +20,12 @@
             <li> <input type="text" name="image" placeholder="image"></li>
             <li><input type="text" name="description" placeholder="description"></li>
             <li><input type="number" name="dispo" placeholder="dispo" min="1" max="2"></li>
+            <li><select name="categorie">
+                    <libelle>Choisissez la catégorie</libelle>
+                    @foreach($categories as $categorie)
+                        <option value="{{$categorie->id}}">{{$categorie->nom}}</option>
+                    @endforeach
+                </select> </li>
         </ul>
         <button type="submit" class="btn btn-dark btn-outline-light">Création du produit</button>
     </form>

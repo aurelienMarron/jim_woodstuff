@@ -9,23 +9,15 @@ use Illuminate\Support\Facades\DB;
 class ProduitController extends Controller
 {
     public function catalogue(){
-        $produitsEnStock=DB::select('SELECT * FROM produits ');
-        //$produitsEnStock=DB::select('SELECT * FROM produits WHERE produits.dispo=1');
-
-
+        $produitsEnStock=Produit::all();
         return view('pages/catalogue',['catalogue'=>$produitsEnStock]);
     }
 
 
-   /* public function detailProduit($id)
-    {
-        $produit=DB::select('SELECT * FROM products WHERE id=?',[$id]);
-        return view('pages/detailProduit',['produit'=>$produit]);
-    }*/
 
     public function detailProduit($id){
-        $produit=DB::select('SELECT * FROM produits where produits.id=?',[$id]);
+        $produit=Produit::find($id);
         return view('pages/detailProduit',
-            ['detailProduit'=>$produit[0]]);
+            ['detailProduit'=>$produit]);
     }
 }

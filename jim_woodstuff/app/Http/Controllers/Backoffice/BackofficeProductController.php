@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backoffice;
 use Illuminate\Http\Request;
 use App\Models\Produit;
 use App\Http\Controllers\Controller;
+use App\Models\Categorie;
 
 class BackofficeProductController extends Controller
 {
@@ -15,8 +16,8 @@ class BackofficeProductController extends Controller
      */
     public function index()
     {
-        $produits=Produit::all();
-        return view('backoffice/backofficeProduits',['produits'=>$produits]);
+        $produits = Produit::all();
+        return view('backoffice/backofficeProduits', ['produits' => $produits]);
     }
 
     /**
@@ -26,21 +27,22 @@ class BackofficeProductController extends Controller
      */
     public function create()
     {
-        return view('backoffice/nouveauProduit');
+        $categories = Categorie::all();
+        return view('backoffice/nouveauProduit', ['categories' => $categories]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $request->validate([
-            'nom'=>'required|unique:produits',
-            'prix'=>'numeric|min:0',
-            'dispo'=>'min:1|max:2|integer'
+            'nom' => 'required|unique:produits',
+            'prix' => 'numeric|min:0',
+            'dispo' => 'min:1|max:2|integer'
         ]);
 
         $produit = Produit::create(
@@ -57,52 +59,54 @@ class BackofficeProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $produit=Produit::find($id);
-        return view('backoffice/detailProduit',['produit'=>$produit]);
+        $produit = Produit::find($id);
+        return view('backoffice/detailProduit', ['produit' => $produit]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $produit=Produit::find($id);
-        return view('backoffice/modifProduit',['produit'=>$produit]);
+        $produit = Produit::find($id);
+        $categories = Categorie::all();
+        return view('backoffice/modifProduit', ['produit' => $produit], ['categories' => $categories]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $produit=Produit::find($id);
-        $input=$request->all();
+        $produit = Produit::find($id);
+        $input = $request->all();
         $produit->fill($input)->save();
 
 
-        return redirect()->route('backofficeProduits.show',[$produit]);
+        return redirect()->route('backofficeProduits.show', [$produit]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        Produit::find($id)->delete();
+        return redirect()->route('backofficeProduits.index');
     }
 }

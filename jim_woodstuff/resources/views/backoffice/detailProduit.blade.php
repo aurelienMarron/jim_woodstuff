@@ -26,10 +26,16 @@
                             Malheuresement il n'y en a plus en stock, et ouais c'est le risque avec du fait main !
                         @endif
                     </li>
+                    <li>Categorie: {{$produit->categorie->nom}}</li>
                 </ul>
             </div>
         </div>
         <a href="{{route('backofficeProduits.edit',[$produit])}}">Mofifier le produit</a>
+        <form method="POST" action="{{route('backofficeProduits.destroy',[$produit])}}">
+            @method('DELETE')
+            @csrf
+            <button  type="submit" class="btn btn-dark btn-outline-light">Supprimer le produit</button>
+        </form>
     </div>
 
 

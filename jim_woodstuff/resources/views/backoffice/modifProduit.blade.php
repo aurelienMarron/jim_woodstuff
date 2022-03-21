@@ -21,6 +21,16 @@
             <li> <input type="text" name="image" value="{{$produit->image}}"></li>
             <li><input type="text" name="description" value="{{$produit->image}}"></li>
             <li><input type="number" name="dispo" value="{{$produit->dispo}}" min="1" max="2"></li>
+            <li><select name="categorie">
+                    <libelle>Choisissez la catégorie</libelle>
+                    @foreach($categories as $categorie)
+                        @if($categorie->id===$produit->categorie_id)
+                            <option value="{{$categorie->id}}" selected>{{$categorie->nom}}</option>
+                        @else
+                        <option value="{{$categorie->id}}">{{$categorie->nom}}</option>
+                        @endif
+                    @endforeach
+                </select> </li>
         </ul>
         <button type="submit" class="btn btn-dark btn-outline-light">Modification du produit</button>
     </form>
