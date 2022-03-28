@@ -23,6 +23,10 @@ Route::get('/catalogue', [ProduitController::class,'catalogue']);
 
 Route::get('/detailProduit/{id}', [ProduitController::class,'detailProduit']);
 
-Route::get('/backoffice',[AccueilController::class,'backoffice']);
+Route::get('/backoffice',[AccueilController::class,'backoffice'])->middleware('auth');
 
-Route::resource('/backofficeProduits',BackofficeProductController::class);
+Route::resource('/backofficeProduits',BackofficeProductController::class)->middleware('auth');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

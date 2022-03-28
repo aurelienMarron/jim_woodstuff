@@ -19,35 +19,34 @@ class ProduitsTableSeeder extends Seeder
                 'id' => 1,
                 'nom' => 'Cuillère en buis 17cm',
                 'description' => "Cuillère en buis de 17cm. Taillée au couteau.
-Huilé d'un mélange de cire d'abeille et d'huile de coco.
-    100% artisanal.
-    Le buis est un bois très dense, ce qui permet à la cuillère d'être très douce.
-Durabilité garantie.
-boxwood spoon handcrafted",
+Huilé d'un mélange de cire d'abeille et d'huile de coco. 100% artisanal. Le buis est un bois très dense, ce qui permet à la cuillère d'être très douce.
+Durabilité garantie. boxwood spoon handcrafted",
                 'prix' => 33.00,
                 'image'=>'cuillerebuis17.jpg',
                 'dispo'=>1,
+                'categorie_id'=>1
             ],
             [
                 'id' => 2,
                 'nom' => "Boucles d'oreilles en buis de 3,5cm de long",
                 'description' => "Boucles d'oreilles en buis de 3,5cm de long (sans compter le montant).
-Montant en argent 925
-Vendue avec une paire de stop pour ne pas les perdre.",
+Montant en argent 925. Vendue avec une paire de stop pour ne pas les perdre.",
                 'prix' => 24.00,
+                'image'=>NULL,
                 'dispo'=>2,
+                'categorie_id'=>2
             ],
-            [
+           [
                 'id' => 3,
                 'nom' => "Cuillère en buis taillée à la main",
                 'description' => "Cuillère en buis de 22cm, taillée au couteau.
-Huilée d'un mélange de cire d'abeille et d'huile de coco.
-Pièce unique.
+                Huilée d'un mélange de cire d'abeille et d'huile de coco. Pièce unique.
 Le buis est un bois dense qui donne une fois poncé un aspect très lisse et doux.
-C'est un des meilleurs bois et des plus agréable à mettre en bouche.
-Durabilité garantie",
+C'est un des meilleurs bois et des plus agréable à mettre en bouche. Durabilité garantie",
                 'prix' => 35.00,
+               'image'=>NULL,
                 'dispo'=>2,
+                'categorie_id'=>1
             ],
             [
                 'id' => 4,
@@ -61,7 +60,9 @@ Bois local
 Pièce unique
 A vos desserts!!!",
                 'prix' => 22.00,
+                'image'=>NULL,
                 'dispo'=>2,
+                'categorie_id'=>1
             ],
             [
                 'id' => 5,
@@ -73,7 +74,9 @@ Format cuillère à soupe.
 100% artisanal
 Pièce unique",
                 'prix' => 22.00,
+                'image'=>NULL,
                 'dispo'=>2,
+                'categorie_id'=>1
             ],
             [
                 'id' => 6,
@@ -85,6 +88,7 @@ Cadeau sympa à offrir à de futurs parents.",
                 'prix' => 10.00,
                 'image'=>'cuillerebebehetre.jpg',
                 'dispo'=>2,
+                'categorie_id'=>1
             ],
             [
                 'id' => 7,
@@ -97,6 +101,7 @@ A vos casseroles!!!",
                 'prix' => 24.00,
                 'image'=>'spatulehetre.jpg',
                 'dispo'=>1,
+                'categorie_id'=>1
             ],
             [
                 'id' => 8,
@@ -112,6 +117,7 @@ Boxwood spoon, handcrafted",
                 'prix' => 33.00,
                 'image'=>'cuillerebuis.jpg',
                 'dispo'=>1,
+                'categorie_id'=>1
             ],
             [
                 'id' => 9,
@@ -122,6 +128,7 @@ Longueur totale 6cm.",
                 'prix' => 22.00,
                 'image'=>'boucleprunierclair.jpg',
                 'dispo'=>1,
+                'categorie_id'=>2
             ],
             [
                 'id' => 10,
@@ -132,6 +139,7 @@ Longueur totale 4,5cm.",
                 'prix' => 20.00,
                 'image'=>'boucleprunelier.jpg',
                 'dispo'=>1,
+                'categorie_id'=>2
             ],
             [
                 'id' => 11,
@@ -142,6 +150,7 @@ Boxwood spoon handcrafted",
                 'prix' => 30.00,
                 'image'=>'cuillerebuis18.jpg',
                 'dispo'=>1,
+                'categorie_id'=>1
             ],
             [
                 'id' => 12,
@@ -152,6 +161,7 @@ Longueur totale 6,5cm",
                 'prix' => 24.00,
                 'image'=>'bouclebuis.jpg',
                 'dispo'=>1,
+                'categorie_id'=>2
             ],
             [
                 'id' => 13,
@@ -160,7 +170,9 @@ Longueur totale 6,5cm",
 Montant argent 925.
 Longueur totale 4,5cm.",
                 'prix' => 16.00,
+                'image'=>NULL,
                 'dispo'=>2,
+                'categorie_id'=>2
             ],
             [
                 'id' => 14,
@@ -169,7 +181,9 @@ Longueur totale 4,5cm.",
 Montant argent 925.
 Longueur totale 4,5cm.",
                 'prix' => 20.00,
+                'image'=>NULL,
                 'dispo'=>2,
+                'categorie_id'=>2
             ],
             [
                 'id' => 15,
@@ -180,6 +194,7 @@ Longueur totale 7cm.",
                 'prix' => 20.00,
                 'image'=>'boucleprunierfonce.jpg',
                 'dispo'=>1,
+                'categorie_id'=>2
             ],
             [
                 'id' => 16,
@@ -188,7 +203,9 @@ Longueur totale 7cm.",
 Montant argent 925.
 Longueur totale 5cm.",
                 'prix' => 22.00,
+                'image'=>NULL,
                 'dispo'=>2,
+                'categorie_id'=>2
             ],
             [
                 'id' => 17,
@@ -199,20 +216,25 @@ Le hêtre est un grand classique dans les ustensiles de cuisine.",
                 'prix' => 18.00,
                 'image'=>'cuillerehetre17.jpg',
                 'dispo'=>1,
+                'categorie_id'=>1
             ],
             [
                 'id' => 18,
                 'nom' => "Cuillère en cerisier",
                 'description' => "Cuillère en cerisier de 30cm, long manche parfait pour la cuisine.",
                 'prix' => 22.00,
+                'image'=>NULL,
                 'dispo'=>2,
+                'categorie_id'=>1
             ],
             [
                 'id' => 19,
                 'nom' => "Cuillère en hêtre",
                 'description' => "Cuillère en hêtre de 17cm, plus design que fonctionnelle.",
                 'prix' => 15.00,
+                'image'=>NULL,
                 'dispo'=>2,
+                'categorie_id'=>1
             ],
             [
                 'id' => 20,
@@ -226,6 +248,7 @@ vendu sans cordon.",
                 'prix' => 22.00,
                 'image'=>'collierbuis.jpg',
                 'dispo'=>2,
+                'categorie_id'=>2
             ],
         ]);
     }

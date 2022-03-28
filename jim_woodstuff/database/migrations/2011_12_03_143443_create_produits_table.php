@@ -13,6 +13,7 @@ class CreateProduitsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('produits', function (Blueprint $table) {
             $table->id();
             $table->string('nom',100);
@@ -20,7 +21,10 @@ class CreateProduitsTable extends Migration
             $table->float('prix');
             $table->boolean('dispo')->nullable();
             $table->string('image',200)->nullable();
+            $table->Biginteger('categorie_id')->unsigned()->nullable();
             $table->timestamps();
+
+            $table->foreign('categorie_id')->references('id')->on('categories');
         });
     }
 
