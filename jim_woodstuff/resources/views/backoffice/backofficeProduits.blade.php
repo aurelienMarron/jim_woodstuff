@@ -1,12 +1,14 @@
 @extends('app')
 
 @section('content')
-@foreach($produits as $produit)
-    <ul>
-        <li>{{$produit->nom}}</li>
-    </ul>
-@endforeach
-<a href="{{route('backofficeProduits.create')}}">Créer un nouveau produit</a>
+    @foreach($produits as $produit)
+        <ul>
+            <a href="{{route('backofficeProduits.show',[$produit])}}">
+                <li>{{$produit->nom}}</li>
+            </a>
+        </ul>
+    @endforeach
+    <a href="{{route('backofficeProduits.create')}}">Créer un nouveau produit</a>
 
 @endsection
 

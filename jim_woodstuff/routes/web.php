@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\Backoffice\BackofficeProductController;
+use App\Http\Controllers\Backoffice\BackofficeCategorieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::get('/detailProduit/{id}', [ProduitController::class,'detailProduit']);
 Route::get('/backoffice',[AccueilController::class,'backoffice'])->middleware('auth');
 
 Route::resource('/backofficeProduits',BackofficeProductController::class)->middleware('auth');
+
+Route::resource('/backofficeCategories',BackofficeCategorieController::class)->middleware('auth');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

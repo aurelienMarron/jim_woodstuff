@@ -1,4 +1,3 @@
-
 @extends('app')
 
 @section('content')
@@ -13,14 +12,16 @@
                 <div class=" card-body text-center">
                     <h5>Gestion Produits</h5>
                     <a href="{{route('backofficeProduits.index')}}">
-                    <img src="/img/produits.jpeg" alt="" height="200">
+                        <img src="/img/produits.jpeg" alt="" height="200">
                     </a>
                 </div>
             </div>
             <div class="col-md-3" id="catalogue">
                 <div class="card-body text-center">
                     <h5>Gestion Catégories</h5>
-                    <img src="/img/categories.png" alt="" height="200">
+                    <a href="{{route('backofficeCategories.index')}}">
+                        <img src="/img/categories.png" alt="" height="200">
+                    </a>
                 </div>
             </div>
         </div>
