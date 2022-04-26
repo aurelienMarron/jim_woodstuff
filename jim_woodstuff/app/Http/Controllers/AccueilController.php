@@ -17,9 +17,7 @@ class AccueilController extends Controller
 
         $user=$request->session()->all();
 
-//$user=$request->session()->all();
-        //$user=$request->session()->get('user_id');
-       // $user=$request->getAuth()->getAccount();
+
         return view('backoffice/backofficeAccueil',['user'=>$user]);
     }
 }
